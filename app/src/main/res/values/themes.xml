@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    themes.xml - App Themes and Styles
+    Defines the visual appearance (theme) for the entire app.
+
+    HOW THEMES WORK:
+    ================
+    A theme is a collection of attributes that are applied to all views.
+    Setting colorPrimary here means ALL toolbars, buttons, etc. use that color
+    unless explicitly overridden.
+
+    Our app has two themes:
+    1. Theme.CollegeAlertApp - Main theme used by all activities except Splash
+    2. Theme.CollegeAlertApp.Splash - For the splash screen (no action bar)
+-->
+<resources>
+
+    <!--
+        Base Application Theme
+        Parent: Theme.MaterialComponents.DayNight.DarkActionBar
+        - Uses Material Design components
+        - DayNight: Supports both light and dark mode
+        - DarkActionBar: Action bar text/icons are dark-colored for visibility on light backgrounds
+    -->
+    <style name="Theme.CollegeAlertApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <!-- ===== COLOR PALETTE ===== -->
+        <!-- Primary brand color (toolbar, FAB, etc.) -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Darker variant of primary (status bar color) -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+
+        <!-- Secondary accent color (checkboxes, sliders, etc.) -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+
+        <!-- ===== STATUS BAR ===== -->
+        <!-- Color of the top status bar (where battery/time is shown) -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <!-- ===== TYPOGRAPHY ===== -->
+        <!-- Default text appearance for body text -->
+        <item name="android:textColor">@color/textPrimary</item>
+
+        <!-- ===== WINDOW BEHAVIOR ===== -->
+        <!-- White background for all activities by default -->
+        <item name="android:windowBackground">@color/backgroundPrimary</item>
+
+    </style>
+
+    <!--
+        Splash Screen Theme
+        NoActionBar: Hides the action bar on the splash screen
+        for a cleaner full-screen branded look.
+    -->
+    <style name="Theme.CollegeAlertApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Same primary color for status bar -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+
+        <!-- Match status bar to splash background -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+
+        <!-- Full screen background matches splash layout background -->
+        <item name="android:windowBackground">@color/colorPrimary</item>
+
+        <!-- Make status bar icons light-colored (white) since background is dark -->
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+
+    <!--
+        NoActionBar Theme variant for activities using custom Toolbars.
+        Used as an alternative when activities manage their own toolbar.
+    -->
+    <style name="Theme.CollegeAlertApp.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <!-- ===== WIDGET STYLES ===== -->
+
+    <!--
+        Custom Button Style
+        Makes all Button widgets use Material filled button appearance.
+    -->
+    <style name="Widget.CollegeAlertApp.Button" parent="Widget.MaterialComponents.Button">
+
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">8dp</item>
+
+    </style>
+
+    <!--
+        Custom CardView style with consistent elevation and corner radius.
+    -->
+    <style name="Widget.CollegeAlertApp.Card" parent="Widget.MaterialComponents.CardView">
+
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">12dp</item>
+
+    </style>
+
+    <style name="Theme.CollegeAlert" parent="android:Theme.Material.Light.NoActionBar" />
+
+</resources>

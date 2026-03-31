@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_event_list.xml - Event List Screen Layout
+    Features:
+    - Toolbar with back navigation and category title
+    - RecyclerView to display scrollable list of events
+    - Empty state TextView shown when no events exist
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Toolbar with back button and title -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:navigationIconTint="@android:color/white" />
+
+    <!-- FrameLayout allows RecyclerView and Empty State to overlap -->
+    <!-- Only one is visible at a time -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--
+            RecyclerView: The scrollable list of event cards.
+            android:clipToPadding="false" allows cards to show their shadow
+            even at the edges of the list.
+        -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+        <!--
+            Empty State: Shown when there are no events to display.
+            Centered on screen with an icon and descriptive text.
+            Visibility is controlled programmatically.
+        -->
+        <LinearLayout
+            android:id="@+id/tvEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <!-- Empty state icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📭"
+                android:textSize="64sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Empty state message (set programmatically) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No events found.\nCheck back later!"
+                android:textSize="16sp"
+                android:textColor="@color/textSecondary"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

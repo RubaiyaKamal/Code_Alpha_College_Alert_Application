@@ -1,0 +1,23 @@
+// Project-level build.gradle
+// This file configures build settings that apply to all modules in the project.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin
+        classpath 'com.android.tools.build:gradle:8.9.1'
+
+        // Google Services plugin for Firebase
+        classpath 'com.google.gms:google-services:4.4.1'
+    }
+}
+plugins {
+    alias(libs.plugins.kotlin.android) apply false
+}
+
+task clean(type: Delete) {
+    delete layout.buildDirectory
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    circle_white_bg.xml - White Circle Shape Drawable
+    Used as the background for icon circles throughout the app.
+    Example: The bell icon on splash screen and main activity.
+
+    HOW SHAPE DRAWABLES WORK:
+    -------------------------
+    Shape drawables let you define geometric shapes (circles, rectangles, etc.)
+    purely in XML without needing image files. Much better for:
+    - Different screen densities (vector scales perfectly)
+    - Dynamic colors
+    - Smaller APK size
+
+    <shape android:shape="oval"> with equal width/height = circle
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Fill color: White -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Optional subtle border for definition -->
+    <!-- <stroke android:color="#E0E0E0" android:width="1dp" /> -->
+
+</shape>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_event.xml - Single Event Card Layout
+    This layout is used for EACH item in the RecyclerView event list.
+    The EventAdapter inflates this layout for every event row.
+
+    Layout structure:
+    [CardView]
+      [Category Badge] [Title]
+      [Description]
+      [📅 DateTime] [📍 Location]
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <!-- Main content container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- ===== TOP ROW: Category Badge + Title ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <!--
+                Category Badge - A small colored pill/chip showing the event type.
+                Background color is set dynamically by EventAdapter.applyCategory().
+                Example: "EXAM" badge is red, "FEST" badge is green.
+            -->
+            <TextView
+                android:id="@+id/tvEventCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seminar"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/badge_background"
+                android:layout_marginEnd="10dp" />
+
+            <!--
+                Event Title - The main name of the event.
+                layout_weight="1" makes it take remaining horizontal space.
+                maxLines="2" prevents very long titles from breaking layout.
+            -->
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Event Title"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <!-- ===== DESCRIPTION ===== -->
+        <!--
+            Event description text.
+            maxLines="3" shows up to 3 lines, ellipsize="end" adds "..." if longer.
+        -->
+        <TextView
+            android:id="@+id/tvEventDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event description goes here..."
+            android:textSize="13sp"
+            android:textColor="@color/textSecondary"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Divider line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ===== BOTTOM ROW: Date/Time + Location ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Date and Time -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Calendar emoji as icon -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📅"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/tvEventDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date/Time"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+            <!-- Location -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Location pin emoji as icon -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/tvEventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

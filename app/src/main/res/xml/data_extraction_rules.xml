@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    data_extraction_rules.xml - Android 12+ Data Extraction Rules
+    This is the newer version of backup_rules.xml for Android 12+.
+    Reference: android:dataExtractionRules="@xml/data_extraction_rules" in Manifest.
+
+    Controls what data is included/excluded during:
+    - Cloud Backup (Google Drive backup)
+    - Device-to-Device transfers
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude login session preferences from cloud backup -->
+        <exclude domain="sharedpref" path="CollegeAlertPrefs.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <!-- Allow device-to-device transfer of non-sensitive app data -->
+        <exclude domain="sharedpref" path="CollegeAlertPrefs.xml" />
+    </device-transfer>
+</data-extraction-rules>

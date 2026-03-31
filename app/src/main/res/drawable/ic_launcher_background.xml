@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ic_launcher_background.xml - App Launcher Icon Background Layer
+    Used for adaptive icons (Android 8.0+).
+    The background layer sits behind the foreground layer.
+    We use the primary color (Indigo) for brand consistency.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorPrimary" />
+</shape>

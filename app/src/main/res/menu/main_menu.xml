@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    main_menu.xml - Toolbar Options Menu for MainActivity
+    Defines the overflow/action buttons shown in the toolbar.
+
+    HOW MENUS WORK:
+    ===============
+    1. This XML defines menu items (buttons in the toolbar)
+    2. onCreateOptionsMenu() in MainActivity inflates this file
+    3. onOptionsItemSelected() handles clicks on each item
+
+    showAsAction attribute:
+    - "never" → item always in overflow (3-dot menu)
+    - "ifRoom" → shown as button if space available
+    - "always" → always shown as a button icon
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+        Admin Panel Button
+        Only visible when user is logged in as admin (set in onCreateOptionsMenu).
+        Shows in the overflow menu (3 dots).
+    -->
+    <item
+        android:id="@+id/action_admin"
+        android:title="@string/menu_admin"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="ifRoom"
+        android:visible="false" />
+
+    <!--
+        Logout Button
+        Always available in the overflow menu.
+    -->
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/menu_logout"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:showAsAction="never" />
+
+</menu>

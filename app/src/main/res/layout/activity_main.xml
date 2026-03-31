@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml - Main Dashboard Layout
+    Features:
+    - Custom Toolbar
+    - Welcome text
+    - 2x2 grid of category cards (Seminar, Exam, Fest, Notice)
+    - "View All Events" button
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- ===== TOOLBAR ===== -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- ===== SCROLLABLE CONTENT ===== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ===== WELCOME SECTION ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Bell icon -->
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text="🔔"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/circle_white_bg"
+                        android:layout_marginEnd="12dp" />
+
+                    <!-- Welcome text -->
+                    <TextView
+                        android:id="@+id/tvWelcome"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Welcome!\nTap a category to see alerts."
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:lineSpacingExtra="4dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===== SECTION TITLE ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Browse by Category"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:layout_marginBottom="12dp" />
+
+            <!-- ===== ROW 1: SEMINAR + EXAM ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- SEMINAR CARD -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSeminar"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#E3F2FD">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp">
+
+                        <!-- Icon -->
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:text="📚"
+                            android:textSize="26sp"
+                            android:gravity="center"
+                            android:background="@drawable/circle_blue_bg"
+                            android:layout_marginBottom="8dp" />
+
+                        <!-- Category Label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seminars"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#1565C0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Workshops &amp; Talks"
+                            android:textSize="11sp"
+                            android:textColor="#64B5F6" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- EXAM CARD -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardExam"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFEBEE">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:text="📝"
+                            android:textSize="26sp"
+                            android:gravity="center"
+                            android:background="@drawable/circle_red_bg"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exams"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#C62828" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tests &amp; Assessments"
+                            android:textSize="11sp"
+                            android:textColor="#EF9A9A" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- ===== ROW 2: FEST + NOTICE ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- FEST CARD -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFest"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#E8F5E9">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:text="🎉"
+                            android:textSize="26sp"
+                            android:gravity="center"
+                            android:background="@drawable/circle_green_bg"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fests"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2E7D32" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Events &amp; Celebrations"
+                            android:textSize="11sp"
+                            android:textColor="#81C784" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- NOTICE CARD -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardNotice"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFF3E0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:text="📢"
+                            android:textSize="26sp"
+                            android:gravity="center"
+                            android:background="@drawable/circle_orange_bg"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Notices"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#E65100" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Important Announcements"
+                            android:textSize="11sp"
+                            android:textColor="#FFCC80" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- ===== VIEW ALL EVENTS BUTTON ===== -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAll"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📋  View All Campus Events"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  →"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

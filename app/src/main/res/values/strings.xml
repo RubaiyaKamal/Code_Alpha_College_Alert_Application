@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    strings.xml - String Resources
+    All text strings used in the app should be defined here.
+    Benefits:
+    1. Easy to translate the app (just create strings-fr.xml, strings-hi.xml, etc.)
+    2. Easy to change text without modifying multiple Java/XML files
+    3. Android Studio flags hardcoded strings as warnings
+-->
+<resources>
+    <!-- App Name - Shown in launcher, task switcher, and notification header -->
+    <string name="app_name">College Alert</string>
+
+    <!-- ===== LOGIN SCREEN STRINGS ===== -->
+    <string name="login_title">Login to College Alert</string>
+    <string name="label_email">Email Address</string>
+    <string name="label_password">Password</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">CREATE ACCOUNT</string>
+    <string name="btn_forgot_password">Forgot Password?</string>
+    <string name="tab_student">Student</string>
+    <string name="tab_admin">Admin</string>
+    <string name="admin_hint">Demo Admin Credentials:\nEmail: admin@college.edu\nPassword: Admin@123</string>
+
+    <!-- ===== MAIN ACTIVITY STRINGS ===== -->
+    <string name="title_main">College Alert</string>
+    <string name="welcome_student">Welcome, Student!\nTap a category to see alerts.</string>
+    <string name="welcome_admin">Welcome, Admin!\nManage and post campus alerts below.</string>
+    <string name="browse_by_category">Browse by Category</string>
+
+    <!-- Category names shown on dashboard cards -->
+    <string name="category_seminar">Seminars</string>
+    <string name="category_exam">Exams</string>
+    <string name="category_fest">Fests</string>
+    <string name="category_notice">Notices</string>
+
+    <!-- Category subtitles on cards -->
+    <string name="subtitle_seminar">Workshops &amp; Talks</string>
+    <string name="subtitle_exam">Tests &amp; Assessments</string>
+    <string name="subtitle_fest">Events &amp; Celebrations</string>
+    <string name="subtitle_notice">Important Announcements</string>
+
+    <!-- View All button -->
+    <string name="btn_view_all">View All Campus Events</string>
+
+    <!-- ===== EVENT LIST STRINGS ===== -->
+    <string name="title_all_events">All Campus Events</string>
+    <string name="empty_events">No events found.\nCheck back later!</string>
+
+    <!-- ===== ADMIN PANEL STRINGS ===== -->
+    <string name="title_admin">Admin Panel - Add Event</string>
+    <string name="label_event_title">Event Title *</string>
+    <string name="label_event_category">Category *</string>
+    <string name="label_event_datetime">Date &amp; Time *</string>
+    <string name="label_event_location">Location *</string>
+    <string name="label_event_description">Description *</string>
+    <string name="hint_event_title">e.g., Mathematics Final Exam</string>
+    <string name="hint_event_datetime">e.g., 2024-03-15 at 10:00 AM</string>
+    <string name="hint_event_location">e.g., Auditorium Hall A, Room 301</string>
+    <string name="hint_event_description">Describe the event in detail...</string>
+    <string name="btn_add_event">ADD EVENT</string>
+    <string name="btn_adding">Adding Event…</string>
+    <string name="admin_info">Add new campus events below. Students will see them in real-time. Send FCM notifications from Firebase Console to alert students.</string>
+
+    <!-- ===== TOOLBAR MENU STRINGS ===== -->
+    <string name="menu_admin">Admin Panel</string>
+    <string name="menu_logout">Logout</string>
+
+    <!-- ===== NOTIFICATION STRINGS ===== -->
+    <string name="notification_channel_name">College Alerts</string>
+    <string name="notification_channel_desc">Notifications for college events, exams, seminars, and notices</string>
+    <string name="notification_default_title">College Alert</string>
+    <string name="notification_default_body">New update from your college</string>
+
+    <!-- ===== ERROR AND STATUS MESSAGES ===== -->
+    <string name="error_email_required">Email is required</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_password_short">Password must be at least 6 characters</string>
+    <string name="error_title_required">Event title is required</string>
+    <string name="error_description_required">Event description is required</string>
+    <string name="error_datetime_required">Date and time is required</string>
+    <string name="error_location_required">Location is required</string>
+    <string name="msg_login_success_student">Welcome back, Student!</string>
+    <string name="msg_login_success_admin">Welcome, Admin!</string>
+    <string name="msg_register_success">Account created! Welcome!</string>
+    <string name="msg_logout_success">Logged out successfully</string>
+    <string name="msg_event_added">Event added successfully!</string>
+    <string name="msg_notifications_enabled">Notifications enabled! You\'ll receive campus alerts.</string>
+    <string name="msg_notifications_denied">Notifications denied. You can enable them in Settings.</string>
+    <string name="msg_no_internet">No internet connection. Please check your network.</string>
+
+</resources>

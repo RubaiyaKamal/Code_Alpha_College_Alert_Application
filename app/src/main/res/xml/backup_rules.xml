@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    backup_rules.xml - Android Auto Backup Rules
+    Controls what data is backed up when using Android's Auto Backup feature.
+    Reference this file in AndroidManifest.xml: android:fullBackupContent="@xml/backup_rules"
+
+    We exclude SharedPreferences from backup so users have to login fresh
+    when they restore their device or switch phones.
+-->
+<full-backup-content>
+    <!--
+        Exclude SharedPreferences to prevent login sessions from being restored.
+        Users should always authenticate fresh on a new device.
+    -->
+    <exclude domain="sharedpref" path="CollegeAlertPrefs.xml" />
+</full-backup-content>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- ===== PERMISSIONS ===== -->
+    <!-- Internet permission: Required to connect to Firebase -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Network state permission: Check if connected before Firebase calls -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- POST_NOTIFICATIONS: Required on Android 13+ (API 33+) to show notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- VIBRATE: Allow notifications to vibrate the device -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CollegeAlertApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CollegeAlert" />
+        <!-- ===== ACTIVITIES ===== -->
+        <!--
+            SplashActivity: The first screen shown when app launches.
+            It is the MAIN/LAUNCHER activity (entry point of the app).
+        -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CollegeAlertApp.Splash">
+            <intent-filter>
+
+                <!-- These two lines make this the app launcher entry point -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+            LoginActivity: Handles student and admin login.
+            Not exported (only launched internally, not from other apps).
+        -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!--             EventListActivity: Displays a list of events filtered by category. -->
+        <activity
+            android:name=".EventListActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <!--
+            AdminActivity: Admin panel for adding new events.
+            parentActivityName enables the "Up" back button in the action bar.
+        -->
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- ===== SERVICES ===== -->
+        <!--
+            MyFirebaseMessagingService: Background service that handles FCM messages.
+            This runs when the app receives a push notification from Firebase.
+        -->
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- This filter tells Android this service handles FCM messages -->
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- ===== FCM DEFAULT CHANNEL ===== -->
+        <!--
+            Sets the default notification channel ID for FCM messages.
+            Required for Android 8.0+ (API 26+) to display notifications.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="college_alerts_channel" />
+        <!--
+            Sets the default notification icon for FCM messages.
+            This icon appears in the status bar.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <!--             Sets the default notification color. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+    </application>
+
+</manifest>

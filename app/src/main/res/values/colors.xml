@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    colors.xml - Color Resources
+    All colors used in the app are defined here.
+    Reference: @color/colorName (in XML) or ContextCompat.getColor(context, R.color.colorName) (in Java)
+
+    Color Scheme:
+    - Primary (Deep Purple/Indigo): Main brand color - used in toolbar, buttons
+    - Secondary (Teal): Accent color for secondary actions
+    - Category colors: Each event type has its own blue/red/green/orange palette
+-->
+<resources>
+
+    <!-- ===== PRIMARY BRAND COLORS ===== -->
+    <!--
+        colorPrimary: Main brand color used for toolbar, primary buttons.
+        Deep Indigo gives a professional, academic feel.
+    -->
+    <color name="colorPrimary">#3F51B5</color>       <!-- Indigo 600 -->
+    <color name="colorPrimaryDark">#303F9F</color>    <!-- Indigo 700 (status bar color) -->
+    <color name="colorPrimaryLight">#7986CB</color>   <!-- Indigo 300 -->
+
+    <!--
+        colorSecondary: Used for secondary buttons (Register) and accents.
+    -->
+    <color name="colorSecondary">#009688</color>      <!-- Teal 500 -->
+    <color name="colorSecondaryDark">#00796B</color>  <!-- Teal 700 -->
+
+    <!-- ===== CATEGORY COLORS ===== -->
+    <!-- SEMINAR - Blue palette (educational, calm) -->
+    <color name="seminarPrimary">#1565C0</color>      <!-- Blue 800 -->
+    <color name="seminarLight">#E3F2FD</color>         <!-- Blue 50 (card background) -->
+    <color name="seminarMid">#64B5F6</color>           <!-- Blue 300 (subtitle) -->
+
+    <!-- EXAM - Red palette (important, attention-grabbing) -->
+    <color name="examPrimary">#C62828</color>          <!-- Red 800 -->
+    <color name="examLight">#FFEBEE</color>            <!-- Red 50 (card background) -->
+    <color name="examMid">#EF9A9A</color>              <!-- Red 200 (subtitle) -->
+
+    <!-- FEST - Green palette (festive, positive) -->
+    <color name="festPrimary">#2E7D32</color>          <!-- Green 800 -->
+    <color name="festLight">#E8F5E9</color>            <!-- Green 50 (card background) -->
+    <color name="festMid">#81C784</color>              <!-- Green 300 (subtitle) -->
+
+    <!-- NOTICE - Orange palette (warning, attention) -->
+    <color name="noticePrimary">#E65100</color>        <!-- Deep Orange 900 -->
+    <color name="noticeLight">#FFF3E0</color>          <!-- Orange 50 (card background) -->
+    <color name="noticeMid">#FFCC80</color>            <!-- Orange 200 (subtitle) -->
+
+    <!-- ===== TEXT COLORS ===== -->
+    <color name="textPrimary">#212121</color>          <!-- Almost black - main text -->
+    <color name="textSecondary">#757575</color>        <!-- Grey - secondary/hint text -->
+    <color name="textOnPrimary">#FFFFFF</color>        <!-- White - text on colored backgrounds -->
+    <color name="textLink">#1565C0</color>             <!-- Blue - links/clickable text -->
+
+    <!-- ===== BACKGROUND COLORS ===== -->
+    <color name="backgroundPrimary">#F5F5F5</color>   <!-- Light grey - app background -->
+    <color name="backgroundCard">#FFFFFF</color>       <!-- White - card backgrounds -->
+    <color name="backgroundInput">#FAFAFA</color>      <!-- Near white - input field backgrounds -->
+
+    <!-- ===== DIVIDER / BORDER COLORS ===== -->
+    <color name="divider">#E0E0E0</color>              <!-- Light grey - dividers -->
+    <color name="border">#BDBDBD</color>               <!-- Medium grey - input borders -->
+
+    <!-- ===== UTILITY COLORS ===== -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Success / Error states -->
+    <color name="colorSuccess">#388E3C</color>         <!-- Green - success messages -->
+    <color name="colorError">#D32F2F</color>           <!-- Red - error messages -->
+    <color name="colorWarning">#F57C00</color>         <!-- Orange - warnings -->
+
+</resources>

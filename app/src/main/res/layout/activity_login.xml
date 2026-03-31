@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_login.xml - Login Screen Layout
+    Features:
+    - TabLayout for Student / Admin login tabs
+    - Email and Password input fields
+    - Login and Register buttons
+    - Forgot password link
+    - Admin credentials hint (shown on Admin tab)
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <!-- ===== HEADER SECTION ===== -->
+        <!-- Colored header with app branding -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="24dp">
+
+            <!-- App icon (bell emoji as placeholder) -->
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="🔔"
+                android:textSize="36sp"
+                android:gravity="center"
+                android:background="@drawable/circle_white_bg"
+                android:layout_marginBottom="12dp" />
+
+            <!-- App title in header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="College Alert"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!-- ===== CARD WITH LOGIN FORM ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <!-- ===== TAB LAYOUT: Student | Admin ===== -->
+                <!--
+                    TabLayout creates a tab bar at the top of the card.
+                    Users can switch between Student and Admin login modes.
+                -->
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:tabMode="fixed"
+                    app:tabGravity="fill"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabUnselectedTextColor="@color/textSecondary"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+
+                    <!-- Student Tab -->
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Student" />
+
+                    <!-- Admin Tab -->
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Admin" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <!-- ===== FORM FIELDS ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Email Input Field -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Address"
+                        android:textSize="13sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your email"
+                        android:inputType="textEmailAddress"
+                        android:background="@drawable/input_background"
+                        android:padding="12dp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="16dp"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext" />
+
+                    <!-- Password Input Field -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textSize="13sp"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your password"
+                        android:inputType="textPassword"
+                        android:background="@drawable/input_background"
+                        android:padding="12dp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"
+                        android:maxLines="1"
+                        android:imeOptions="actionDone" />
+
+                    <!-- Forgot Password Link -->
+                    <TextView
+                        android:id="@+id/tvForgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Forgot Password?"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimary"
+                        android:padding="4dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Admin credentials hint - only visible on Admin tab -->
+                    <TextView
+                        android:id="@+id/tvAdminHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Demo Admin Credentials:\nEmail: admin@college.edu\nPassword: Admin@123"
+                        android:textSize="12sp"
+                        android:textColor="#E65100"
+                        android:background="#FFF3E0"
+                        android:padding="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone" />
+
+                    <!-- Progress bar shown during login operation -->
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
+                    <!-- LOGIN Button -->
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="LOGIN"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- REGISTER Button (Students only) -->
+                    <Button
+                        android:id="@+id/btnRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="CREATE ACCOUNT"
+                        android:textSize="15sp"
+                        android:backgroundTint="@color/colorSecondary"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

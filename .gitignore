@@ -1,0 +1,48 @@
+# ===================================================
+# .gitignore for Android College Alert Application
+# ===================================================
+
+# ===== SENSITIVE FILES =====
+# NEVER commit the real google-services.json to public repos!
+# It contains API keys and project credentials.
+# Keep the placeholder file (app/google-services.json) but
+# note that the REAL file should not be committed.
+# app/google-services.json  <- Uncomment to ignore the real file
+
+# Environment files with secrets
+.env
+*.env
+local.properties
+
+# ===== ANDROID BUILD OUTPUT =====
+# Generated build files - not needed in version control
+*.apk
+*.aab
+*.dex
+*.class
+bin/
+gen/
+out/
+build/
+.gradle/
+
+# ===== ANDROID STUDIO =====
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+*.orig
+
+# ===== GRADLE WRAPPER BINARIES =====
+# Only ignore the actual JAR/bat files, keep gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# ===== LOGS =====
+*.log

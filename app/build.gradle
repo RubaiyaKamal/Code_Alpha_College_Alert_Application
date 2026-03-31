@@ -1,0 +1,95 @@
+// App-level build.gradle
+// This file contains module-specific build configurations and dependencies.
+
+plugins {
+    id 'com.android.application'
+    // Apply the Google services Gradle plugin (required for Firebase)
+    id 'com.google.gms.google-services'
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    // The namespace is the unique application ID for this app
+    namespace 'com.collegealert.app'
+
+    // compileSdk defines which Android API version to compile against
+    compileSdk 36
+
+    defaultConfig {
+        // Unique application identifier on the Google Play Store
+        applicationId "com.collegealert.app"
+
+        // Minimum Android version supported (API 21 = Android 5.0 Lollipop)
+        minSdk 23
+
+        // The Android API version the app targets (optimized for)
+        targetSdk 36
+
+        // Internal version number (increment for each release)
+        versionCode 1
+
+        // Human-readable version string
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            // Enables code shrinking and obfuscation for release builds
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        // Use Java 8 features
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+
+kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    // AndroidX Core and AppCompat for backward compatibility
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // Material Design components (buttons, cards, chips, etc.)
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // ConstraintLayout for flexible UI layouts
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // RecyclerView for displaying scrollable lists of events
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // CardView for displaying each event in a card-style UI
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Firebase Bill of Materials (BOM) - manages all Firebase library versions
+    implementation platform('com.google.firebase:firebase-bom:32.7.2')
+
+    // Firebase Cloud Messaging (FCM) - for sending/receiving push notifications
+    implementation 'com.google.firebase:firebase-messaging'
+
+    // Firebase Realtime Database - for storing and syncing event data
+    implementation 'com.google.firebase:firebase-database'
+
+    // Firebase Authentication - for login functionality
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Analytics (optional but included by default with Firebase)
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation libs.androidx.core.ktx
+
+    // Unit testing dependencies
+    testImplementation 'junit:junit:4.13.2'
+
+    // Instrumented testing dependencies
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

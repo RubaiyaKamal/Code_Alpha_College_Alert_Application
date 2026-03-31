@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    badge_background.xml - Category Badge Background
+    Used for the colored category labels on event cards.
+    Creates a rounded pill/chip shape.
+
+    The background color itself is overridden dynamically in EventAdapter.java
+    using holder.tvCategory.setBackgroundColor(). This XML provides the shape.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Default fill color (overridden dynamically in Java) -->
+    <solid android:color="#1565C0" />
+
+    <!-- Rounded corners: cornerRadius >= height/2 creates a full pill shape -->
+    <corners android:radius="20dp" />
+
+</shape>
