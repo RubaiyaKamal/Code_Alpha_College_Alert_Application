@@ -4,7 +4,6 @@
     This icon appears in the status bar when a notification is received.
 
     NOTIFICATION ICON REQUIREMENTS:
-    --------------------------------
     1. Must be a simple monochrome (single color) shape
     2. Android uses ONLY the ALPHA channel (transparency) to render it
     3. The color set here doesn't matter much - Android uses colorPrimary

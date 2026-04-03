@@ -5,7 +5,6 @@
     Example: The bell icon on splash screen and main activity.
 
     HOW SHAPE DRAWABLES WORK:
-    -------------------------
     Shape drawables let you define geometric shapes (circles, rectangles, etc.)
     purely in XML without needing image files. Much better for:
     - Different screen densities (vector scales perfectly)

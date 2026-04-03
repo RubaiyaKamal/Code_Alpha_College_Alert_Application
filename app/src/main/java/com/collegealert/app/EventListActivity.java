@@ -58,7 +58,8 @@ public class EventListActivity extends AppCompatActivity {
     // ===== UI COMPONENTS =====
     private Toolbar toolbar;
     private RecyclerView recyclerView;
-    private TextView tvEmpty;  // Shown when no events are found
+    private View tvEmpty;        // Shown when no events are found
+    private TextView tvEmptyMessage;  // Message text inside empty state
 
     // ===== ADAPTER & DATA =====
     private EventAdapter eventAdapter;
@@ -101,6 +102,7 @@ public class EventListActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         recyclerView = findViewById(R.id.recyclerView);
         tvEmpty = findViewById(R.id.tvEmpty);
+        tvEmptyMessage = findViewById(R.id.tvEmptyMessage);
     }
 
     /**
@@ -259,7 +261,7 @@ public class EventListActivity extends AppCompatActivity {
         if (eventList.isEmpty()) {
             recyclerView.setVisibility(View.GONE);
             tvEmpty.setVisibility(View.VISIBLE);
-            tvEmpty.setText("No " + ("All".equals(category) ? "" : category + " ")
+            tvEmptyMessage.setText("No " + ("All".equals(category) ? "" : category + " ")
                     + "events found.\nCheck back later!");
         } else {
             recyclerView.setVisibility(View.VISIBLE);
